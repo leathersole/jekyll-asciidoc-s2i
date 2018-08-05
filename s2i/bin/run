@@ -7,4 +7,4 @@
 #	https://github.com/openshift/source-to-image/blob/master/docs/builder_image.md
 #
 
-exec asdf -p 8080
+exec /opt/rh/rh-nodejs8/root/usr/local/bin/superstatic --port 8080 --host 0.0.0.0
