@@ -14,15 +14,16 @@ fi
 
 # Restore artifacts from the previous build (if they exist).
 #
+
 if [ "$(ls /tmp/artifacts/ 2>/dev/null)" ]; then
   echo "---> Restoring build artifacts..."
-  mv /tmp/artifacts/. ./
+  mv /tmp/artifacts/bundle /tmp/
 fi
 
 echo "---> Building a site from source..."
 SRCDIR=`pwd`
 cd /tmp/src
-scl enable rh-ruby24 -- bundle install
+scl enable rh-ruby24 -- bundle install --path /tmp/bundle
 
 echo "---> Building application from source..."
-scl enable rh-ruby24 -- jekyll build --source /tmp/src --destination $SRCDIR
+JEKYLL_ENV=production scl enable rh-ruby24 -- bundle exec jekyll build --source /tmp/src --destination $SRCDIR
