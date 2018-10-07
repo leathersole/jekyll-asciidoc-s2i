@@ -3,12 +3,12 @@ FROM centos/nodejs-8-centos7
 
 LABEL maintainer="Takayuki Konishi <seannos.takayuki@gmail.com>"
 
-ENV JEKYLL_ASCIIDOC_S2I_VERSION 0.0.3
+ENV JEKYLL_ASCIIDOC_S2I_VERSION 0.0.4
 
 LABEL io.k8s.description="Platform for building static web site via Antora then publish it" \
-      io.k8s.display-name="jekyll-asciidoc-s2i 0.0.3" \
+      io.k8s.display-name="jekyll-asciidoc-s2i 0.0.4" \
       io.openshift.expose-services="8080:http" \
-      io.openshift.tags="jekyll-asciidoc-s2i,0.0.3"
+      io.openshift.tags="jekyll-asciidoc-s2i,0.0.4"
 
 USER root
 

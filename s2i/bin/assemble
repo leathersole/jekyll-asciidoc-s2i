@@ -26,4 +26,4 @@ cd /tmp/src
 scl enable rh-ruby24 -- bundle install --path /tmp/bundle
 
 echo "---> Building application from source..."
-JEKYLL_ENV=production scl enable rh-ruby24 -- bundle exec jekyll build --source /tmp/src --destination $SRCDIR
+LANG="en_US.UTF-8" LC_ALL="en_US.UTF-8" JEKYLL_ENV=production scl enable rh-ruby24 -- bundle exec jekyll build --source /tmp/src --destination $SRCDIR
